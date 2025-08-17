@@ -16,9 +16,9 @@ To play the game, you will need `$PUSH` Testnet tokens. You can get them from th
 
 Here are some screenshots of the gameplay:
 
-![Gameplay Screenshot 1](https://raw.githubusercontent.com/MrTimonM/PushFlap-Game/refs/heads/main/2025-08-17_07-42.png)
-![Gameplay Screenshot 2](https://raw.githubusercontent.com/MrTimonM/PushFlap-Game/refs/heads/main/2025-08-17_07-43.png)
-![Gameplay Screenshot 3](https://raw.githubusercontent.com/MrTimonM/PushFlap-Game/refs/heads/main/2025-08-17_07-45.png)
+![Gameplay Screenshot 1](screenshots/2025-08-17_07-42.png)
+![Gameplay Screenshot 2](screenshots/2025-08-17_07-43.png)
+![Gameplay Screenshot 3](screenshots/2025-08-17_07-45.png)
 
 ## Getting Started
 
