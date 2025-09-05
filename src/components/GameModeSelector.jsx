@@ -79,7 +79,7 @@ const GameModeSelector = ({ onSelectMode, onBack }) => {
             <div>
               <h3 className="text-lg font-semibold text-gray-700 mb-2">How to Play:</h3>
               <ul className="text-gray-600 space-y-1">
-                <li>• Click or press SPACE to make the bird jump</li>
+                <li>• Click or press SPACE to make the plane jump</li>
                 <li>• Avoid hitting the pipes or ground</li>
                 <li>• Pass through pipe gaps to score points</li>
                 <li>• Try to beat your high score!</li>

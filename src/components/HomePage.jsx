@@ -39,7 +39,7 @@ const HomePage = ({ onStartGame, onShowHistory }) => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="text-4xl animate-bounce-bird">🐦</div>
+            <div className="text-4xl animate-bounce-bird">✈️</div>
             <div>
               <h1 className="text-3xl font-pixel flappy-title">
                 Avia Masters
@@ -91,7 +91,7 @@ const HomePage = ({ onStartGame, onShowHistory }) => {
       <main className="max-w-4xl mx-auto px-4 pb-6 relative z-10 flex items-center justify-center min-h-[60vh]">
         {/* Welcome Card - Centered */}
         <div className="cloud-panel p-8 text-center max-w-md w-full">
-          <div className="text-8xl mb-6 animate-bounce-bird">🐦</div>
+          <div className="text-8xl mb-6 animate-bounce-bird">✈️</div>
           <h2 className="text-2xl font-pixel text-flappy-dark mb-4">
             Welcome to Avia Masters!
           </h2>

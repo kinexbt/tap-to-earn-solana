@@ -124,7 +124,7 @@ function App() {
                 {/* Game Header */}
                 <div className="flex justify-between items-center p-4 pipe-panel">
                   <div className="flex items-center space-x-4">
-                    <div className="text-lg animate-bounce-bird">🐦</div>
+                    <div className="text-lg animate-bounce-bird">✈️</div>
                     <h1 className="text-lg font-pixel text-white">Avia Masters</h1>
                   </div>
                   <button
@@ -162,8 +162,8 @@ function App() {
                 <div className="h-screen flex flex-col">
                   <div className="flex justify-between items-center p-4 pipe-panel">
                     <div className="flex items-center space-x-4">
-                      <div className="text-lg">🐦</div>
-                      <h1 className="text-lg font-pixel text-white">PushFlap</h1>
+                      <div className="text-lg">✈️</div>
+                      <h1 className="text-lg font-pixel text-white">Avia Masters</h1>
                     </div>
                     <button
                       onClick={handleBackToModeSelect}

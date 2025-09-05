@@ -33,11 +33,11 @@ const HowToPlayModal = ({ isOpen, onClose }) => {
             <div className="space-y-3 text-sm font-pixel text-gray-700">
               <div className="flex items-start space-x-3">
                 <span className="text-blue-600 font-bold text-lg">1.</span>
-                <span>Click anywhere on the game screen or press <kbd className="bg-gray-200 px-2 py-1 rounded text-xs">SPACE</kbd> to make the bird flap</span>
+                <span>Click anywhere on the game screen or press <kbd className="bg-gray-200 px-2 py-1 rounded text-xs">SPACE</kbd> to make the plane flap</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-blue-600 font-bold text-lg">2.</span>
-                <span>Keep the bird flying by timing your flaps to avoid hitting pipes or the ground</span>
+                <span>Keep the plane flying by timing your flaps to avoid hitting pipes or the ground</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-blue-600 font-bold text-lg">3.</span>

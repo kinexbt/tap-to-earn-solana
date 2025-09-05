@@ -9,8 +9,8 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       { progress: 20, text: 'Connecting to Solana Network...' },
       { progress: 40, text: 'Loading game assets...' },
       { progress: 60, text: 'Initializing smart contracts...' },
-      { progress: 80, text: 'Preparing bird for flight...' },
-      { progress: 100, text: 'Ready to flap!' },
+      { progress: 80, text: 'Preparing plane for flight...' },
+      { progress: 100, text: 'Ready to fly!' },
     ];
 
     let currentStep = 0;
@@ -46,7 +46,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       <div className="relative z-10 text-center">
         {/* Game Logo */}
         <div className="mb-12">
-          <div className="text-8xl mb-4 animate-bounce-bird">🐦</div>
+          <div className="text-8xl mb-4 animate-bounce-bird">✈️</div>
           <h1 className="flappy-title font-pixel mb-4">
             Avia Masters
           </h1>

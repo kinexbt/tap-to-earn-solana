@@ -80,7 +80,7 @@ const Leaderboard = () => {
                   </div>
                   {index < 3 && (
                     <div className="text-xs font-pixel text-flappy-yellow">
-                      {index === 0 ? 'Flappy Champion' : index === 1 ? 'Silver Flapper' : 'Bronze Bird'}
+                      {index === 0 ? 'Avia Champion' : index === 1 ? 'Silver Pilot' : 'Bronze Aviator'}
                     </div>
                   )}
                 </div>
