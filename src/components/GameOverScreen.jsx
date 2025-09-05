@@ -158,7 +158,7 @@ const GameOverScreen = ({ score, gameMode, onRestart, onBackToHome }) => {
                           <div>{submitError}</div>
                           {!submitError.includes('No worries') && !submitError.includes('cancelled') && (
                             <div className="mt-2 text-xs opacity-75">
-                              💡 Tip: Make sure you have enough PUSH for gas fees and a stable internet connection
+                              💡 Tip: Make sure you have enough Sol for gas fees and a stable internet connection
                             </div>
                           )}
                         </div>
@@ -225,7 +225,7 @@ const GameOverScreen = ({ score, gameMode, onRestart, onBackToHome }) => {
             ) : score < 10 ? (
               "You're getting the hang of it! Keep practicing! 💪"
             ) : score < 20 ? (
-              "Impressive! You're becoming a PushFlap pro! 🏆"
+              "Impressive! You're becoming a AviaMaster! 🏆"
             ) : (
               "Incredible skills! You're dominating the leaderboard! 👑"
             )}

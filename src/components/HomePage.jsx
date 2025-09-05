@@ -87,10 +87,10 @@ const HomePage = ({ onStartGame, onShowHistory }) => {
             <div className="text-4xl animate-bounce-bird">🐦</div>
             <div>
               <h1 className="text-3xl font-pixel flappy-title">
-                PushFlap
+                Avia Masters
               </h1>
               <div className="cloud-panel px-2 py-1 inline-block mt-1">
-                <span className="text-xs font-pixel text-flappy-dark">Push Testnet</span>
+                <span className="text-xs font-pixel text-flappy-dark">Testnet</span>
               </div>
             </div>
           </div>
@@ -111,10 +111,10 @@ const HomePage = ({ onStartGame, onShowHistory }) => {
             <div className="cloud-panel p-6 text-center">
               <div className="text-6xl mb-4 animate-bounce-bird">🐦</div>
               <h2 className="text-lg font-pixel text-flappy-dark mb-4">
-                Welcome to PushFlap!
+                Welcome to Avia Masters!
               </h2>
               <p className="text-sm font-pixel text-gray-600 mb-6 leading-relaxed">
-                The classic Flappy Bird game on Push Chain where you earn PFT tokens!
+                The classic Tap to Earn game with Avia tokens!
               </p>
               
               {isConnected ? (

@@ -6,7 +6,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
 
   useEffect(() => {
     const loadingSteps = [
-      { progress: 20, text: 'Connecting to Push Network...' },
+      { progress: 20, text: 'Connecting to Solana Network...' },
       { progress: 40, text: 'Loading game assets...' },
       { progress: 60, text: 'Initializing smart contracts...' },
       { progress: 80, text: 'Preparing bird for flight...' },
@@ -48,10 +48,10 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         <div className="mb-12">
           <div className="text-8xl mb-4 animate-bounce-bird">🐦</div>
           <h1 className="flappy-title font-pixel mb-4">
-            PushFlap
+            Avia Masters
           </h1>
           <div className="text-lg font-pixel text-flappy-dark">
-            Flappy Bird on Push Chain!
+            Avia Masters on Solana
           </div>
         </div>
 

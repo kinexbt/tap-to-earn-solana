@@ -1,4 +1,3 @@
-// PushFlap Contracts Reference - Complete ABI and Contract Details
 // Generated on August 15, 2025
 // Network: Push Testnet Donut (Chain ID: 42101)
 
