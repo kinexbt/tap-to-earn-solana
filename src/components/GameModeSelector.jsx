@@ -83,30 +83,6 @@ const GameModeSelector = ({ onSelectMode, onBack }) => {
             </div>
           ))}
         </div>
-
-        {/* Game Rules */}
-        <div className="bg-white rounded-xl p-6 shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Game Rules</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-700 mb-2">How to Play:</h3>
-              <ul className="text-gray-600 space-y-1">
-                <li>• Click or press SPACE to make the plane jump</li>
-                <li>• Avoid hitting the pipes or ground</li>
-                <li>• Pass through pipe gaps to score points</li>
-                <li>• Try to beat your high score!</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-700 mb-2">Mode Differences:</h3>
-              <ul className="text-gray-600 space-y-1">
-                <li>• <strong>Fun Mode:</strong> Relaxed gameplay, perfect for beginners</li>
-                <li>• <strong>Web3 Mode:</strong> High rewards, intense challenge</li>
-                <li>• Higher difficulty = more tokens per point!</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
