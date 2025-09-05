@@ -37,29 +37,21 @@ export const CONTRACT_ADDRESSES = {
 // V4: 0x8200aab5c9f765c9f4c40e83445576b375ee4737 (Current - Complete Game System)
 
 export const GAME_MODES = {
-  EASY: {
-    id: 'easy',
-    name: 'Easy',
+  FUN: {
+    id: 'fun',
+    name: 'Fun Mode',
     color: '#4CAF50',
     emoji: '😊',
-    description: 'Relaxed pace, perfect for beginners',
-    ...getSettingsForDifficulty('easy'),
+    description: 'Relaxed pace, perfect for casual players',
+    ...getSettingsForDifficulty('fun'),
   },
-  MEDIUM: {
-    id: 'medium',
-    name: 'Medium',
-    color: '#FF9800',
-    emoji: '😐',
-    description: 'Balanced challenge for regular players',
-    ...getSettingsForDifficulty('medium'),
-  },
-  HARD: {
-    id: 'hard',
-    name: 'Hard',
-    color: '#F44336',
-    emoji: '😤',
-    description: 'Intense gameplay for experts only',
-    ...getSettingsForDifficulty('hard'),
+  WEB3: {
+    id: 'web3',
+    name: 'Web3 Mode',
+    color: '#9C27B0',
+    emoji: '🚀',
+    description: 'High rewards, intense gameplay for Web3 enthusiasts',
+    ...getSettingsForDifficulty('web3'),
   },
 };
 

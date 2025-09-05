@@ -28,7 +28,7 @@ function App() {
   const [gameState, setGameState] = useState(GAME_STATES.LOADING);
   const [currentScore, setCurrentScore] = useState(0);
   const [isGameActive, setIsGameActive] = useState(false);
-  const [selectedGameMode, setSelectedGameMode] = useState('medium');
+  const [selectedGameMode, setSelectedGameMode] = useState('fun');
 
   // Handle loading completion
   const handleLoadingComplete = () => {

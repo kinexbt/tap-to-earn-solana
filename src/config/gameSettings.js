@@ -19,17 +19,15 @@ export const GAME_SETTINGS = {
 
   // === PHYSICS SETTINGS ===
   PHYSICS: {
-    // Gravity affects how fast bird falls (higher = falls faster)
+    // Gravity affects how fast plane falls (higher = falls faster)
     GRAVITY: {
-      EASY: 0.15,    // Slightly increased gravity (was 0.1)
-      MEDIUM: 0.25,  // Slightly increased gravity (was 0.2)  
-      HARD: 0.35,    // Slightly increased gravity (was 0.3)
+      FUN: 0.15,     // Fun mode - gentle gravity (was EASY)
+      WEB3: 0.35,    // Web3 mode - strong gravity (was HARD)
     },
     // Jump force (negative = upward, higher absolute = stronger jump)
     JUMP_FORCE: {
-      EASY: -6,
-      MEDIUM: -7,
-      HARD: -8,
+      FUN: -6,       // Fun mode - gentle jump (was EASY)
+      WEB3: -8,      // Web3 mode - strong jump (was HARD)
     },
     // Maximum fall speed (prevents infinite acceleration)
     MAX_FALL_SPEED: 8,
@@ -45,23 +43,20 @@ export const GAME_SETTINGS = {
     
     // Gap between top and bottom pipes (IMPORTANT: Controls difficulty)
     GAP_SIZE: {
-      EASY: 350,    // Much wider gap (was 280)
-      MEDIUM: 300,  // Wider gap (was 220)
-      HARD: 280,    // Wider gap (was 200)
+      FUN: 350,     // Fun mode - much wider gap (was EASY)
+      WEB3: 280,    // Web3 mode - narrow gap (was HARD)
     },
     
     // Horizontal spacing between pipes (FIXES THE "TOO CLOSE" ISSUE)
     SPACING: {
-      EASY: 3800,    // Much more space between pipes (was 350)
-      MEDIUM: 3400,  // More space (was 300)
-      HARD: 3100,    // More space (was 280)
+      FUN: 3800,    // Fun mode - much more space between pipes (was EASY)
+      WEB3: 3100,   // Web3 mode - closer pipes (was HARD)
     },
     
     // Pipe movement speed (higher = pipes move faster)
     SPEED: {
-      EASY: 2.5,
-      MEDIUM: 3.0,
-      HARD: 3.5,
+      FUN: 2.5,     // Fun mode - slower speed (was EASY)
+      WEB3: 3.5,    // Web3 mode - faster speed (was HARD)
     },
     
     // Pipe generation settings
@@ -83,14 +78,12 @@ export const GAME_SETTINGS = {
   // === SCORING SETTINGS ===
   SCORING: {
     POINTS_PER_OBSTACLE: {
-      EASY: 10,
-      MEDIUM: 20, 
-      HARD: 40,
+      FUN: 10,      // Fun mode - lower points (was EASY)
+      WEB3: 40,     // Web3 mode - higher points (was HARD)
     },
     TOKENS_PER_OBSTACLE: {
-      EASY: 10,
-      MEDIUM: 20,
-      HARD: 40,
+      FUN: 10,      // Fun mode - lower tokens (was EASY)
+      WEB3: 40,     // Web3 mode - higher tokens (was HARD)
     },
   },
 
@@ -162,13 +155,13 @@ export const getSettingsForDifficulty = (difficulty) => {
   return {
     birdSize: GAME_SETTINGS.BIRD.SIZE,
     pipeWidth: GAME_SETTINGS.PIPES.WIDTH,
-    pipeGap: GAME_SETTINGS.PIPES.GAP_SIZE[mode] || GAME_SETTINGS.PIPES.GAP_SIZE.MEDIUM,
-    pipeSpacing: GAME_SETTINGS.PIPES.SPACING[mode] || GAME_SETTINGS.PIPES.SPACING.MEDIUM,
-    pipeSpeed: GAME_SETTINGS.PIPES.SPEED[mode] || GAME_SETTINGS.PIPES.SPEED.MEDIUM,
-    gravity: GAME_SETTINGS.PHYSICS.GRAVITY[mode] || GAME_SETTINGS.PHYSICS.GRAVITY.MEDIUM,
-    jumpForce: GAME_SETTINGS.PHYSICS.JUMP_FORCE[mode] || GAME_SETTINGS.PHYSICS.JUMP_FORCE.MEDIUM,
-    pointsPerObstacle: GAME_SETTINGS.SCORING.POINTS_PER_OBSTACLE[mode] || 20,
-    tokensPerObstacle: GAME_SETTINGS.SCORING.TOKENS_PER_OBSTACLE[mode] || 20,
+    pipeGap: GAME_SETTINGS.PIPES.GAP_SIZE[mode] || GAME_SETTINGS.PIPES.GAP_SIZE.FUN,
+    pipeSpacing: GAME_SETTINGS.PIPES.SPACING[mode] || GAME_SETTINGS.PIPES.SPACING.FUN,
+    pipeSpeed: GAME_SETTINGS.PIPES.SPEED[mode] || GAME_SETTINGS.PIPES.SPEED.FUN,
+    gravity: GAME_SETTINGS.PHYSICS.GRAVITY[mode] || GAME_SETTINGS.PHYSICS.GRAVITY.FUN,
+    jumpForce: GAME_SETTINGS.PHYSICS.JUMP_FORCE[mode] || GAME_SETTINGS.PHYSICS.JUMP_FORCE.FUN,
+    pointsPerObstacle: GAME_SETTINGS.SCORING.POINTS_PER_OBSTACLE[mode] || 10,
+    tokensPerObstacle: GAME_SETTINGS.SCORING.TOKENS_PER_OBSTACLE[mode] || 10,
   };
 };
 

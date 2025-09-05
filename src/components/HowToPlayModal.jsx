@@ -46,52 +46,40 @@ const HowToPlayModal = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Difficulty Modes */}
+          {/* Game Modes */}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-6">
             <h3 className="text-lg font-pixel text-gray-800 mb-4 flex items-center gap-2">
               <span className="text-xl">⚙️</span>
-              Difficulty Modes
+              Game Modes
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white rounded-lg p-4 border-l-4 border-green-500">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">😊</span>
-                  <h4 className="font-pixel font-bold text-green-700">Easy Mode</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-3xl">😊</span>
+                  <h4 className="font-pixel font-bold text-green-700 text-lg">Fun Mode</h4>
                 </div>
-                <ul className="text-xs text-gray-600 space-y-1">
+                <ul className="text-sm text-gray-600 space-y-2">
                   <li>• Larger pipe gaps (350px)</li>
                   <li>• Slower pipe speed (2.5x)</li>
                   <li>• Gentle gravity (0.15)</li>
                   <li>• 10 points per pipe</li>
-                  <li>• Perfect for beginners</li>
+                  <li>• Perfect for casual players</li>
+                  <li>• Relaxed gameplay experience</li>
                 </ul>
               </div>
               
-              <div className="bg-white rounded-lg p-4 border-l-4 border-yellow-500">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">😐</span>
-                  <h4 className="font-pixel font-bold text-yellow-700">Medium Mode</h4>
+              <div className="bg-white rounded-lg p-6 border-l-4 border-purple-500">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-3xl">🚀</span>
+                  <h4 className="font-pixel font-bold text-purple-700 text-lg">Web3 Mode</h4>
                 </div>
-                <ul className="text-xs text-gray-600 space-y-1">
-                  <li>• Standard pipe gaps (300px)</li>
-                  <li>• Normal pipe speed (3.0x)</li>
-                  <li>• Regular gravity (0.25)</li>
-                  <li>• 20 points per pipe</li>
-                  <li>• Balanced challenge</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white rounded-lg p-4 border-l-4 border-red-500">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">😤</span>
-                  <h4 className="font-pixel font-bold text-red-700">Hard Mode</h4>
-                </div>
-                <ul className="text-xs text-gray-600 space-y-1">
+                <ul className="text-sm text-gray-600 space-y-2">
                   <li>• Small pipe gaps (280px)</li>
                   <li>• Fast pipe speed (3.5x)</li>
                   <li>• Strong gravity (0.35)</li>
                   <li>• 40 points per pipe</li>
-                  <li>• Expert level only</li>
+                  <li>• High rewards for skilled players</li>
+                  <li>• Intense Web3 experience</li>
                 </ul>
               </div>
             </div>
@@ -109,7 +97,7 @@ const HowToPlayModal = ({ isOpen, onClose }) => {
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Passing through pipes:</span>
-                    <span className="font-pixel font-bold text-green-600">+10/20/40 points</span>
+                    <span className="font-pixel font-bold text-green-600">+10/40 points</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Collecting coins:</span>
