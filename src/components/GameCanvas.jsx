@@ -605,8 +605,8 @@ const GameCanvas = ({
   }, [gameStarted, updateGame, currentModeConfig.jumpForce]);
 
   return (
-    <div className="flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-blue-200 to-blue-300 p-4">
-      <div className="mb-6 flex items-center gap-8 bg-white rounded-xl p-4 shadow-lg">
+    <div className="max-h-screen flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-blue-200 to-blue-300 p-4">
+      {/* <div className="mb-6 flex items-center gap-8 bg-white rounded-xl p-4 shadow-lg">
         <div className="text-xl font-bold text-gray-800 flex items-center gap-2">
           <span className="text-2xl">🎮</span>
           Mode: <span className="capitalize text-blue-600">{gameMode}</span>
@@ -618,7 +618,7 @@ const GameCanvas = ({
         <div className="text-lg text-gray-600">
           Points per pipe: <span className="font-semibold text-purple-600">{currentModeConfig.pointsPerObstacle}</span>
         </div>
-      </div>
+      </div> */}
       
       <canvas
         ref={canvasRef}
@@ -628,29 +628,6 @@ const GameCanvas = ({
         className="border-4 border-green-600 rounded-xl cursor-pointer shadow-2xl"
         style={{ display: 'block', background: 'linear-gradient(to bottom, #87CEEB, #98D8E8)' }}
       />
-      
-      <div className="mt-6 text-center bg-white rounded-xl p-4 shadow-lg max-w-2xl">
-        <p className="text-gray-800 mb-2 text-lg font-semibold">
-          {!gameStarted ? '🎯 Click or press SPACE to start!' : '🚀 Click or press SPACE to jump!'}
-        </p>
-        <p className="text-blue-600 mb-3 font-medium">
-          ✨ Collect spinning coins for +5 bonus points! ✨
-        </p>
-        <div className="text-sm text-gray-600 grid grid-cols-3 gap-4 mt-4">
-          <div className="bg-green-50 p-3 rounded-lg">
-            <p className="font-semibold text-green-700">Easy Mode</p>
-            <p>Larger gaps • Slower speed • Gentle gravity</p>
-          </div>
-          <div className="bg-yellow-50 p-3 rounded-lg">
-            <p className="font-semibold text-yellow-700">Medium Mode</p>
-            <p>Standard gaps • Normal speed • Regular gravity</p>
-          </div>
-          <div className="bg-red-50 p-3 rounded-lg">
-            <p className="font-semibold text-red-700">Hard Mode</p>
-            <p>Small gaps • Fast speed • Strong gravity</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

@@ -71,31 +71,6 @@ const GameModeSelector = ({ onSelectMode, onBack }) => {
             </div>
           ))}
         </div>
-
-        {/* Game Rules */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Game Rules</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-700 mb-2">How to Play:</h3>
-              <ul className="text-gray-600 space-y-1">
-                <li>• Click or press SPACE to make the plane jump</li>
-                <li>• Avoid hitting the pipes or ground</li>
-                <li>• Pass through pipe gaps to score points</li>
-                <li>• Try to beat your high score!</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-700 mb-2">Scoring System:</h3>
-              <ul className="text-gray-600 space-y-1">
-                <li>• <span className="text-green-600 font-semibold">Easy:</span> 10 points per pipe</li>
-                <li>• <span className="text-yellow-600 font-semibold">Medium:</span> 20 points per pipe</li>
-                <li>• <span className="text-red-600 font-semibold">Hard:</span> 40 points per pipe</li>
-                <li>• Games are automatically saved to history</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
