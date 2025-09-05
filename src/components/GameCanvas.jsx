@@ -225,43 +225,196 @@ const GameCanvas = ({
       ctx.fillRect(i, canvas.height - 50, 10, 10);
     }
 
-    // Draw bird with better design
-    const birdSize = currentModeConfig.birdSize;
-    const birdX = bird.x + birdSize/2;
-    const birdY = bird.y + birdSize/2;
+    // Draw realistic plane
+    const planeSize = currentModeConfig.birdSize;
+    const planeX = bird.x + planeSize/2;
+    const planeY = bird.y + planeSize/2;
     
-    // Bird body
-    ctx.fillStyle = '#FFD700';
+    // Calculate plane angle based on velocity for realistic banking
+    const angle = Math.min(Math.max(bird.velocity * 0.1, -0.3), 0.3);
+    
+    ctx.save();
+    ctx.translate(planeX, planeY);
+    ctx.rotate(angle);
+    
+    // Main fuselage (aircraft body)
+    const fuselageGradient = ctx.createLinearGradient(-planeSize, 0, planeSize, 0);
+    fuselageGradient.addColorStop(0, '#E8E8E8');
+    fuselageGradient.addColorStop(0.3, '#F5F5F5');
+    fuselageGradient.addColorStop(0.7, '#E0E0E0');
+    fuselageGradient.addColorStop(1, '#D0D0D0');
+    
+    ctx.fillStyle = fuselageGradient;
     ctx.beginPath();
-    ctx.arc(birdX, birdY, birdSize, 0, Math.PI * 2);
+    ctx.ellipse(0, 0, planeSize * 0.8, planeSize * 0.3, 0, 0, Math.PI * 2);
     ctx.fill();
     
-    // Bird wing
-    ctx.fillStyle = '#FFA500';
+    // Fuselage outline
+    ctx.strokeStyle = '#B0B0B0';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    
+    // Main wings (top view)
+    const wingGradient = ctx.createLinearGradient(-planeSize * 1.2, 0, planeSize * 1.2, 0);
+    wingGradient.addColorStop(0, '#C0C0C0');
+    wingGradient.addColorStop(0.5, '#E0E0E0');
+    wingGradient.addColorStop(1, '#C0C0C0');
+    
+    ctx.fillStyle = wingGradient;
     ctx.beginPath();
-    ctx.ellipse(birdX - 5, birdY, 8, 12, Math.PI/6, 0, Math.PI * 2);
+    ctx.ellipse(0, 0, planeSize * 1.2, planeSize * 0.4, 0, 0, Math.PI * 2);
     ctx.fill();
     
-    // Bird beak
-    ctx.fillStyle = '#FF6B35';
+    // Wing outline
+    ctx.strokeStyle = '#A0A0A0';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    
+    // Wing details (flaps, ailerons)
+    ctx.fillStyle = '#D0D0D0';
+    ctx.fillRect(-planeSize * 0.8, -planeSize * 0.2, planeSize * 0.3, planeSize * 0.1);
+    ctx.fillRect(planeSize * 0.5, -planeSize * 0.2, planeSize * 0.3, planeSize * 0.1);
+    
+    // Tail section
+    ctx.fillStyle = fuselageGradient;
     ctx.beginPath();
-    ctx.moveTo(birdX + birdSize - 5, birdY);
-    ctx.lineTo(birdX + birdSize + 8, birdY - 3);
-    ctx.lineTo(birdX + birdSize + 8, birdY + 3);
+    ctx.ellipse(-planeSize * 0.6, 0, planeSize * 0.2, planeSize * 0.15, 0, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Vertical stabilizer (tail fin)
+    ctx.fillStyle = '#D0D0D0';
+    ctx.beginPath();
+    ctx.moveTo(-planeSize * 0.7, -planeSize * 0.1);
+    ctx.lineTo(-planeSize * 0.8, -planeSize * 0.3);
+    ctx.lineTo(-planeSize * 0.6, -planeSize * 0.3);
     ctx.closePath();
     ctx.fill();
     
-    // Bird eye
-    ctx.fillStyle = '#000';
+    // Horizontal stabilizers
+    ctx.fillStyle = '#D0D0D0';
+    ctx.fillRect(-planeSize * 0.8, -planeSize * 0.05, planeSize * 0.4, planeSize * 0.05);
+    ctx.fillRect(-planeSize * 0.8, planeSize * 0.0, planeSize * 0.4, planeSize * 0.05);
+    
+    // Nose cone
+    const noseGradient = ctx.createRadialGradient(planeSize * 0.3, 0, 0, planeSize * 0.3, 0, planeSize * 0.2);
+    noseGradient.addColorStop(0, '#F0F0F0');
+    noseGradient.addColorStop(1, '#E0E0E0');
+    
+    ctx.fillStyle = noseGradient;
     ctx.beginPath();
-    ctx.arc(birdX + 5, birdY - 5, 3, 0, Math.PI * 2);
+    ctx.ellipse(planeSize * 0.3, 0, planeSize * 0.2, planeSize * 0.15, 0, 0, Math.PI * 2);
     ctx.fill();
     
-    // Eye highlight
-    ctx.fillStyle = '#FFF';
+    // Cockpit windows
+    ctx.fillStyle = '#87CEEB';
     ctx.beginPath();
-    ctx.arc(birdX + 6, birdY - 6, 1, 0, Math.PI * 2);
+    ctx.ellipse(planeSize * 0.1, -planeSize * 0.1, planeSize * 0.08, planeSize * 0.06, 0, 0, Math.PI * 2);
     ctx.fill();
+    
+    // Cockpit window frame
+    ctx.strokeStyle = '#666';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    
+    // Engine nacelles (small engines on wings)
+    ctx.fillStyle = '#B0B0B0';
+    ctx.beginPath();
+    ctx.ellipse(-planeSize * 0.3, -planeSize * 0.15, planeSize * 0.1, planeSize * 0.08, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(-planeSize * 0.3, planeSize * 0.15, planeSize * 0.1, planeSize * 0.08, 0, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Engine intakes
+    ctx.fillStyle = '#404040';
+    ctx.beginPath();
+    ctx.ellipse(-planeSize * 0.3, -planeSize * 0.15, planeSize * 0.05, planeSize * 0.04, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(-planeSize * 0.3, planeSize * 0.15, planeSize * 0.05, planeSize * 0.04, 0, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Propeller (if it's a prop plane) - spinning effect
+    const propAngle = Date.now() * 0.02; // Fast spinning
+    ctx.save();
+    ctx.rotate(propAngle);
+    
+    // Propeller blades
+    ctx.fillStyle = '#8B4513';
+    for (let i = 0; i < 3; i++) {
+      ctx.save();
+      ctx.rotate((i * Math.PI * 2) / 3);
+      ctx.fillRect(planeSize * 0.35, -planeSize * 0.02, planeSize * 0.15, planeSize * 0.04);
+      ctx.restore();
+    }
+    
+    // Propeller hub
+    ctx.fillStyle = '#654321';
+    ctx.beginPath();
+    ctx.arc(planeSize * 0.35, 0, planeSize * 0.03, 0, Math.PI * 2);
+    ctx.fill();
+    
+    ctx.restore(); // End propeller rotation
+    
+    // Landing gear (wheels) - only show when plane is low
+    if (bird.y > canvas.height - 150) {
+      ctx.fillStyle = '#666';
+      ctx.beginPath();
+      ctx.arc(-planeSize * 0.2, planeSize * 0.2, planeSize * 0.08, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(planeSize * 0.1, planeSize * 0.2, planeSize * 0.08, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    // Wing lights (navigation lights)
+    ctx.fillStyle = bird.velocity > 0 ? '#FF0000' : '#00FF00'; // Red when climbing, green when descending
+    ctx.beginPath();
+    ctx.arc(-planeSize * 0.8, -planeSize * 0.1, planeSize * 0.03, 0, Math.PI * 2);
+    ctx.fill();
+    
+    ctx.fillStyle = '#0000FF'; // Blue light
+    ctx.beginPath();
+    ctx.arc(-planeSize * 0.8, planeSize * 0.1, planeSize * 0.03, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Exhaust trails (when moving fast)
+    if (Math.abs(bird.velocity) > 2) {
+      const trailOpacity = Math.min(Math.abs(bird.velocity) / 5, 0.6);
+      ctx.strokeStyle = `rgba(100, 100, 100, ${trailOpacity})`;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(-planeSize * 0.3, -planeSize * 0.15);
+      ctx.lineTo(-planeSize * 0.5, -planeSize * 0.15);
+      ctx.moveTo(-planeSize * 0.3, planeSize * 0.15);
+      ctx.lineTo(-planeSize * 0.5, planeSize * 0.15);
+      ctx.stroke();
+      
+      // Additional exhaust particles
+      for (let i = 0; i < 3; i++) {
+        const particleX = -planeSize * 0.4 - (i * planeSize * 0.1);
+        const particleY = -planeSize * 0.15 + (Math.random() - 0.5) * planeSize * 0.1;
+        ctx.fillStyle = `rgba(150, 150, 150, ${trailOpacity * 0.5})`;
+        ctx.beginPath();
+        ctx.arc(particleX, particleY, planeSize * 0.02, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    // Wing tip vortices (when banking)
+    if (Math.abs(angle) > 0.1) {
+      ctx.strokeStyle = `rgba(200, 200, 255, 0.3)`;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(planeSize * 0.8, -planeSize * 0.2);
+      ctx.quadraticCurveTo(planeSize * 1.0, -planeSize * 0.3, planeSize * 1.1, -planeSize * 0.4);
+      ctx.moveTo(planeSize * 0.8, planeSize * 0.2);
+      ctx.quadraticCurveTo(planeSize * 1.0, planeSize * 0.3, planeSize * 1.1, planeSize * 0.4);
+      ctx.stroke();
+    }
+    
+    ctx.restore(); // End plane rotation
+
 
     // Draw pipes with better design
     for (const pipe of pipes) {
